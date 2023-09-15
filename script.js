@@ -50,7 +50,10 @@ fetch(tokenUrl, requestOptions)
     console.error(`Erro: ${error.message}`);
   });
 
-  const accessToken = 'eyJ0eXAiOiJKV1QiLCJraWQiOiIwMWIwNDFkMWQ2MTU0NjA0NzNkMWI1NGFhOGRlNGQ1NyIsImFsZyI6IlJTMjU2In0.eyJzY29wZSI6ImNlcCBjbnBqIG5mc2UiLCJqdGkiOiIyMDlkMDJjOC04NTYzLTQxOTUtOGJmZS05ZGRjMDFkMmNmMjkiLCJodHRwczpcL1wvbnV2ZW1maXNjYWwuY29tLmJyXC90ZW5hbnRfaWQiOiIzYTBkYWE4Yi1kYjBhLTRkNzAtYTJjNy1kOTY2Y2QzZWE3YjYiLCJpc3MiOiJodHRwczpcL1wvYXV0aC5udXZlbWZpc2NhbC5jb20uYnIiLCJhdWQiOiJodHRwczpcL1wvYXBpLnNhbmRib3gubnV2ZW1maXNjYWwuY29tLmJyXC8iLCJleHAiOjE2OTczMzIxNjUsImlhdCI6MTY5NDc0MDE2NSwiY2xpZW50X2lkIjoid1Y5Tk1mNDVrNFhabVR2WmpoYmMifQ.eom_2tFBRMiy2STjwG1Vf9GuYs0N2aY_jcYF4U4-txJclSqbC99XDLcI0sYr5taQjebknVXUIYwwvxag1n1AjKbsmwDrBesSf3dlOlsW-OqZI4Zu7R_T4RA-lTJXK7LM4ALCRk07VNGSdaHsNTxOJtNiGh0uwtkwM-ycGlTW59BXDZE0-qgxB_IVl2yvIT3WjoiOsADARdvt4RQ85_AGNOMc0MbiuXdbCrWBC-j_DclCg8EfSPK6VxjIo7PBO5eISjbA_MqvrChFQ0IJLFbnh-5BB5z1aKZypz2eVghHcsBDrI0mxVG97rzVwd0-t-6WkdG8Vf8NyLFxHMQPo-L1Sg';
+
+
+
+  const mytoken = 'eyJ0eXAiOiJKV1QiLCJraWQiOiIwMWIwNDFkMWQ2MTU0NjA0NzNkMWI1NGFhOGRlNGQ1NyIsImFsZyI6IlJTMjU2In0.eyJzY29wZSI6ImNlcCBjbnBqIG5mc2UiLCJqdGkiOiJiYTU1ODZiOS1jZDM3LTQ5YzQtYjYwOC0zZWM2NjI5NjU3Y2QiLCJodHRwczpcL1wvbnV2ZW1maXNjYWwuY29tLmJyXC90ZW5hbnRfaWQiOiIzYTBkYWE4Yi1kYjBhLTRkNzAtYTJjNy1kOTY2Y2QzZWE3YjYiLCJpc3MiOiJodHRwczpcL1wvYXV0aC5udXZlbWZpc2NhbC5jb20uYnIiLCJhdWQiOiJodHRwczpcL1wvYXBpLnNhbmRib3gubnV2ZW1maXNjYWwuY29tLmJyXC8iLCJleHAiOjE2OTczNjQxOTcsImlhdCI6MTY5NDc3MjE5NywiY2xpZW50X2lkIjoid1Y5Tk1mNDVrNFhabVR2WmpoYmMifQ.OaLCoJbkrw1QDeS4grIXmNqMl2m0xP6QP46-RDw1RxLgNbvg2X8kH4pGSHchUH0EO75nli5QUNIn_pi0xb9YpA9QS-C0VgKrkkvYlJc81QIhfRt1hNUCfvpMNqPB9elCXWUR-zC9jKaYVz6zUF4Ivj4f990byIRbK4ajaDXpChCe6K0I1t4SqmFgF1xhAId5aldAWNIcoYRJ6ugxcOU13b_cLM3haHpiURmwdR-UnB_tZ2wOioBteHmmN52yEhGFslp7PXP2kixFLH6EKf2ygBzyfYTKuezTYxXYLna9GDw0Al7OHGJrUVdeERg6EPeA43-ZmkUaewXDTi184wTB9A';
 
 const apiUrl = 'https://api.nuvemfiscal.com.br/v1/cep/{28940000}'; // Replace {cep} with the actual CEP
 
@@ -58,7 +61,9 @@ const apiUrl = 'https://api.nuvemfiscal.com.br/v1/cep/{28940000}'; // Replace {c
 fetch(apiUrl, {
   method: 'GET',
   headers: {
-    Authorization: `Bearer ${accessToken}`,
+    Authorization: `Bearer ${mytoken}`,
+    Host: `api.nuvemfiscal.com.br`, 
+    Accept: `*/*`,
   },
 })
   .then((response) => {
